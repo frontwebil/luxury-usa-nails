@@ -808,6 +808,18 @@
   .nav-bottom-row {
     padding-top: 0.5rem;
   }
+  .price-category {
+    padding: 1.2rem;
+  }
+  .price-item {
+    padding: 1rem;
+  }
+  .contact-form {
+    padding: 1rem;
+  }
+  .contact-content{
+    padding: 0;
+  }
 }
 
 @media (max-width: 385px) {
