@@ -738,7 +738,7 @@
 
 @media (max-width: 768px) {
   .nav-bottom-row {
-    display: none;
+    /* display: none; */
   }
 
   .nav-contact-icons {
@@ -786,5 +786,33 @@
 
   .price-item-cost {
     align-self: flex-start;
+  }
+}
+
+@media (max-width: 460px) {
+  .nav-right {
+    gap: 0.8rem;
+  }
+  .nav-contact-icons {
+    gap: 0.5rem;
+  }
+  .nav-logo h1 {
+    font-size: 1rem;
+  }
+  .nav-location {
+    font-size: 0.7rem;
+  }
+  .nav-top-row {
+    padding-bottom: 0.5rem;
+  }
+  .nav-bottom-row {
+    padding-top: 0.5rem;
+  }
+}
+
+@media (max-width: 385px) {
+  .nav-links button,
+  .nav-links a {
+    font-size: 0.9rem;
   }
 }
