@@ -737,10 +737,6 @@
 }
 
 @media (max-width: 768px) {
-  .nav-bottom-row {
-    /* display: none; */
-  }
-
   .nav-contact-icons {
     gap: 1rem;
   }
@@ -817,7 +813,7 @@
   .contact-form {
     padding: 1rem;
   }
-  .contact-content{
+  .contact-content {
     padding: 0;
   }
 }
