@@ -2,6 +2,33 @@
   min-height: 100vh;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 600px;
+}
+.form-group {
+  width: 100%;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.form-group input[type="date"] {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
 .navigation {
   position: absolute;
   top: 0;
