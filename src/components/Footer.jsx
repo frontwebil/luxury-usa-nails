@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useLanguage } from "../contexts/LanguageContext";
 import { MdOutlinePhoneInTalk } from "react-icons/md";
-import { FaFacebook, FaInstagram } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaTelegram } from "react-icons/fa";
 
 export default function Footer() {
   const { t } = useLanguage();
@@ -49,7 +49,8 @@ export default function Footer() {
                 className="footer-icon"
                 aria-label="Telegram"
               >
-                <FaInstagram /> Telegram
+                <FaTelegram />
+                Telegram
               </a>
               <a
                 href="https://instagram.com/luxuryusanails"
@@ -58,7 +59,8 @@ export default function Footer() {
                 className="footer-icon"
                 aria-label="Instagram"
               >
-                <FaFacebook /> Instagram
+                <FaInstagram />
+                Instagram
               </a>
             </div>
           </div>
