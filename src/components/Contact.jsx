@@ -108,6 +108,7 @@ export default function Contact() {
               <input
                 type="date"
                 name="date"
+                style={{ maxWidth: "100%" }}
                 placeholder={"Choose Date"}
                 min={new Date().toISOString().split("T")[0]}
                 value={formData.date}
