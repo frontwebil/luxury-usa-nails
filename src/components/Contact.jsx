@@ -58,23 +58,6 @@ export default function Contact() {
     });
   };
 
-  const getAvailableTimeSlots = () => {
-    const now = new Date();
-    const selectedDate = new Date(formData.date);
-
-    return timeSlots.filter((slot) => {
-      if (formData.date !== new Date().toISOString().split("T")[0]) {
-        return true;
-      }
-
-      const [hours, minutes] = slot.split(":");
-      const slotTime = new Date();
-      slotTime.setHours(hours, minutes, 0, 0);
-
-      return slotTime > now;
-    });
-  };
-
   return (
     <section id="contact" className="contact">
       <div className="container">
