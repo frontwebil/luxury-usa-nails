@@ -1,5 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { useLanguage } from "../contexts/LanguageContext";
+import { FaFacebook, FaInstagram } from "react-icons/fa";
+import { MdOutlinePhoneInTalk } from "react-icons/md";
 
 export default function Navigation() {
   const { language, switchLanguage, t } = useLanguage();
@@ -41,7 +43,7 @@ export default function Navigation() {
                 className="nav-icon"
                 aria-label="Phone"
               >
-                📞
+                <MdOutlinePhoneInTalk />
               </a>
               <a
                 href="https://instagram.com/luxuryusanails"
@@ -50,7 +52,7 @@ export default function Navigation() {
                 className="nav-icon"
                 aria-label="Instagram"
               >
-                📷
+                <FaInstagram />
               </a>
               <a
                 href="https://facebook.com/luxuryusanails"
@@ -59,7 +61,7 @@ export default function Navigation() {
                 className="nav-icon"
                 aria-label="Facebook"
               >
-                👍
+                <FaFacebook />
               </a>
             </div>
             <button className="lang-switch" onClick={toggleLanguage}>

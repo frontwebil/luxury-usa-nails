@@ -151,7 +151,7 @@
 .lang-switch:hover {
   background: var(--primary-color);
   color: var(--white) !important;
-  transform: scale(1.05);
+  /* transform: scale(1.05); */
 }
 
 .lang-switch::after {
