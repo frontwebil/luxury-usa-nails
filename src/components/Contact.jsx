@@ -15,6 +15,8 @@ export default function Contact() {
     message: "",
   });
 
+  const [loading, setLoading] = useState(false);
+
   const serviceOptions = [
     { id: "manicure", labelDe: "Maniküre", labelEn: "Manicure" },
     { id: "pedicure", labelDe: "Pediküre", labelEn: "Pedicure" },
@@ -60,6 +62,13 @@ export default function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (loading) {
+      return;
+    }
+
+    setLoading(true);
+
     const botToken = import.meta.env.VITE_TELEGRAM_BOT_TOKEN;
     const chatId = import.meta.env.VITE_TELEGRAM_CHAT_ID;
 
@@ -91,9 +100,12 @@ export default function Contact() {
           service: "",
           message: "",
         });
+        setLoading(false);
       }
+      setLoading(false);
     } catch (error) {
       console.log(error);
+      setLoading(false);
     }
   };
 
@@ -186,7 +198,7 @@ export default function Contact() {
                 rows="4"
               ></textarea>
             </div>
-            <button type="submit" className="submit-btn">
+            <button type="submit" className="submit-btn" disabled={loading}>
               {t("contact.form.submit")}
             </button>
           </form>
