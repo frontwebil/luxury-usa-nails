@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useLanguage } from "../contexts/LanguageContext";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 export default function Contact() {
   const { t, language } = useLanguage();
@@ -33,22 +35,66 @@ export default function Contact() {
   ];
 
   const timeSlots = [];
+  const now = new Date();
+
   for (let hour = 9; hour < 19; hour++) {
-    timeSlots.push(`${hour.toString().padStart(2, "0")}:00`);
-    timeSlots.push(`${hour.toString().padStart(2, "0")}:30`);
+    for (let minute of [0, 30]) {
+      const slotTime = new Date();
+      slotTime.setHours(hour, minute, 0, 0);
+
+      // якщо дата = сьогодні → не показуємо час, що вже пройшов
+      if (
+        formData.date === now.toISOString().split("T")[0] &&
+        slotTime <= now
+      ) {
+        continue;
+      }
+
+      timeSlots.push(
+        `${hour.toString().padStart(2, "0")}:${minute
+          .toString()
+          .padStart(2, "0")}`
+      );
+    }
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert(t("contact.form.successMessage"));
-    setFormData({
-      name: "",
-      phone: "",
-      date: "",
-      time: "",
-      service: "",
-      message: "",
-    });
+    const botToken = import.meta.env.VITE_TELEGRAM_BOT_TOKEN;
+    const chatId = import.meta.env.VITE_TELEGRAM_CHAT_ID;
+
+    const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+
+    try {
+      const htmlSend = `
+<b>📩 New Booking Request</b>
+👤 Name: ${formData.name}
+📞 Phone: ${formData.phone}
+📅 Date: ${formData.date}  ⏰ Time: ${formData.time}
+💅 Service: ${formData.service}
+💬 Message: ${formData.message}
+`.trim();
+
+      const response = await axios.post(url, {
+        chat_id: chatId,
+        text: htmlSend,
+        parse_mode: "HTML",
+      });
+
+      if (response.data.ok) {
+        toast.success("Booking sent successfully!");
+        setFormData({
+          name: "",
+          phone: "",
+          date: "",
+          time: "",
+          service: "",
+          message: "",
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const handleChange = (e) => {
