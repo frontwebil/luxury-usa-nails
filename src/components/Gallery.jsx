@@ -41,9 +41,9 @@ export default function Gallery() {
           {images.map((image, index) => (
             <div key={index} className="gallery-item">
               <img src={image.url} alt={image.alt} loading="lazy" />
-              <div className="gallery-overlay">
+              {/* <div className="gallery-overlay">
                 <span>{t("gallery.view")}</span>
-              </div>
+              </div> */}
             </div>
           ))}
         </div>
