@@ -1,51 +1,39 @@
 export default function PriceList() {
   const services = [
     {
-      category: 'Maniküre',
+      category: "Nagelmodellage / Design",
       items: [
-        { name: 'Klassische Maniküre', price: '35€', description: 'Nägel feilen, Nagelhaut pflegen, polieren' },
-        { name: 'Spa Maniküre', price: '50€', description: 'Inklusive Peeling, Maske und Handmassage' },
-        { name: 'Gel Maniküre', price: '45€', description: 'Langanhaltender Gel-Lack' },
-        { name: 'French Maniküre', price: '40€', description: 'Klassischer French-Look' }
-      ]
+        { name: "Natur Pink / Make-up", price: "35–40 €" },
+        { name: "Natur Pink Clear", price: "30–35 €" },
+        { name: "Farbe", price: "37–42 €" },
+        { name: "Farbe mit Glitzer", price: "40–45 €" },
+        { name: "Weißer Verlauf", price: "37–42 €" },
+        { name: "Ombre Farbe", price: "42–47 €" },
+        { name: "Cat Eyes", price: "42–47 €" },
+        { name: "French Weiß", price: "40–45 €" },
+        { name: "French Farbe", price: "43–48 €" },
+        { name: "Chrom", price: "+10 €" },
+      ],
     },
     {
-      category: 'Pediküre',
+      category: "✋ Maniküre",
       items: [
-        { name: 'Klassische Pediküre', price: '45€', description: 'Nägel schneiden, feilen, Hornhaut entfernen' },
-        { name: 'Luxus Spa Pediküre', price: '65€', description: 'Inklusive Peeling, Maske und Fußmassage' },
-        { name: 'Gel Pediküre', price: '55€', description: 'Mit langhaltendem Gel-Lack' },
-        { name: 'French Pediküre', price: '50€', description: 'Eleganter French-Style' }
-      ]
+        { name: "Maniküre", price: "15 €" },
+        { name: "Maniküre mit Shellac", price: "37 €" },
+        { name: "Nur Shellac", price: "27 €" },
+      ],
     },
     {
-      category: 'Nagelverlängerung',
+      category: "🦶 Pediküre (Füße)",
       items: [
-        { name: 'Acryl Nägel - Neuanlage', price: '65€', description: 'Komplette Neuanlage mit Acryl' },
-        { name: 'Acryl Nägel - Auffüllung', price: '50€', description: 'Auffüllen bestehender Acrylnägel' },
-        { name: 'Gel Nägel - Neuanlage', price: '70€', description: 'Komplette Neuanlage mit Gel' },
-        { name: 'Gel Nägel - Auffüllung', price: '55€', description: 'Auffüllen bestehender Gelnägel' }
-      ]
+        { name: "Nur Pediküre", price: "33 €" },
+        { name: "Pediküre mit Farbe", price: "45 €" },
+        { name: "Pediküre mit French", price: "47 €" },
+        { name: "Pediküre mit Acryl", price: "58 €" },
+        { name: "Nur Shellac (Füße)", price: "27 €" },
+      ],
     },
-    {
-      category: 'Nageldesign',
-      items: [
-        { name: 'Einfaches Design', price: '15€', description: 'Pro Hand - Streifen, Punkte' },
-        { name: 'Aufwendiges Design', price: '25€', description: 'Pro Hand - Komplexe Muster' },
-        { name: 'Nail Art Premium', price: '35€', description: 'Pro Hand - Kunstvolle Designs' },
-        { name: 'Strass & Verzierungen', price: 'ab 5€', description: 'Je nach Aufwand' }
-      ]
-    },
-    {
-      category: 'Zusätzliche Services',
-      items: [
-        { name: 'Nagellack entfernen', price: '10€', description: 'Gel oder normaler Lack' },
-        { name: 'Nagelreparatur', price: '5€', description: 'Pro Nagel' },
-        { name: 'Paraffinbehandlung', price: '20€', description: 'Für Hände oder Füße' },
-        { name: 'Hand- oder Fußmassage', price: '15€', description: '15 Minuten' }
-      ]
-    }
-  ]
+  ];
 
   return (
     <section id="prices" className="price-list">
@@ -54,16 +42,17 @@ export default function PriceList() {
           <h2>Preisliste</h2>
           <p>Unsere Services und Preise im Überblick</p>
         </div>
+
         <div className="price-categories">
           {services.map((category, index) => (
             <div key={index} className="price-category">
               <h3 className="category-title">{category.category}</h3>
+
               <div className="price-items">
                 {category.items.map((item, itemIndex) => (
                   <div key={itemIndex} className="price-item">
                     <div className="price-item-info">
                       <h4>{item.name}</h4>
-                      <p>{item.description}</p>
                     </div>
                     <div className="price-item-cost">{item.price}</div>
                   </div>
@@ -72,10 +61,14 @@ export default function PriceList() {
             </div>
           ))}
         </div>
+
         <div className="price-note">
-          <p>Alle Preise verstehen sich inklusive Mehrwertsteuer. Individuelle Beratung und Preisanpassungen nach Absprache möglich.</p>
+          <p>
+            Alle Preise verstehen sich inklusive Mehrwertsteuer. Individuelle
+            Beratung und Preisanpassungen nach Absprache möglich.
+          </p>
         </div>
       </div>
     </section>
-  )
+  );
 }

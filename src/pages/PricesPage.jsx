@@ -6,62 +6,58 @@ export default function PricesPage() {
 
   const serviceCategories = [
     {
-      key: "manicure",
+      key: "modelage",
       services: [
-        "classicManicure",
-        "spaManicure",
-        "gelManicure",
-        "frenchManicure",
+        "naturPinkMakeup",
+        "naturPinkClear",
+        "farbe",
+        "farbeMitGlitzer",
+        "weisserVerlauf",
+        "ombreFarbe",
+        "catEyes",
+        "frenchWeiss",
+        "frenchFarbe",
+        "chromAddon",
       ],
+    },
+    {
+      key: "manicure",
+      services: ["manikuere", "manikuereMitShellac", "nurShellac"],
     },
     {
       key: "pedicure",
       services: [
-        "classicPedicure",
-        "luxurySpaPedicure",
-        "gelPedicure",
-        "frenchPedicure",
+        "nurPedikuere",
+        "pedikuereMitFarbe",
+        "pedikuereMitFrench",
+        "pedikuereMitAcryl",
+        "nurShellacFuesse",
       ],
-    },
-    {
-      key: "extensions",
-      services: ["acrylicNew", "acrylicRefill", "gelNew", "gelRefill"],
-    },
-    {
-      key: "nailArt",
-      services: [
-        "simpleDesign",
-        "complexDesign",
-        "premiumNailArt",
-        "rhinestones",
-      ],
-    },
-    {
-      key: "additional",
-      services: ["polishRemoval", "nailRepair", "paraffinTreatment", "massage"],
     },
   ];
 
   return (
     <section id="prices" className="price-list">
       <Navigation />
+
       <div className="container">
         <div className="section-header">
           <h2>{t("prices.title")}</h2>
           <p>{t("prices.subtitle")}</p>
         </div>
+
         <div className="price-categories">
           {serviceCategories.map((category, index) => (
             <div key={index} className="price-category">
               <h3 className="category-title">
                 {t(`prices.categories.${category.key}`)}
               </h3>
+
               <div className="price-items">
                 {category.services.map((serviceKey, itemIndex) => (
                   <div key={itemIndex} className="price-item">
                     <div className="price-item-info">
                       <h4>{t(`prices.services.${serviceKey}.name`)}</h4>
-                      <p>{t(`prices.services.${serviceKey}.description`)}</p>
                     </div>
                     <div className="price-item-cost">
                       {t(`prices.services.${serviceKey}.price`)}
@@ -72,6 +68,7 @@ export default function PricesPage() {
             </div>
           ))}
         </div>
+
         <div className="price-note">
           <p>{t("prices.note")}</p>
         </div>
