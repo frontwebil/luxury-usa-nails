@@ -15,28 +15,20 @@ export default function Footer() {
             <p>
               <strong>Luxury USA Nails Oppenheim</strong>
               <br />
-              {t("contact.address.street")}
-              <br />
-              {t("contact.address.city")}
-              <br />
-              {t("contact.address.country")}
+              Im SBK Edeka Markt <br />
+              Sant’ Ambrogio-Ring 6 <br />
+              55276 Oppenheim
             </p>
           </div>
           <div className="footer-section">
             <h4>{t("contact.hours")}</h4>
-            <p>
-              {t("contact.schedule.weekdays")}
-              <br />
-              {t("contact.schedule.saturday")}
-              <br />
-              {t("contact.schedule.sunday")}
-            </p>
+            <p>{t("contact.schedule.weekdays")}</p>
           </div>
           <div className="footer-section">
             <h4>{t("contact.contactInfo")}</h4>
             <div className="footer-icons">
               <a
-                href="tel:+4961331234567"
+                href="tel:+49 6133 578 68 86"
                 className="footer-icon"
                 aria-label="Phone"
               >

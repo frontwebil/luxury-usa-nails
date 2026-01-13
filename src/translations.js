@@ -88,7 +88,7 @@ const translations = {
         country: "Deutschland",
       },
       schedule: {
-        weekdays: "Montag - Freitag: 9:00 - 19:00",
+        weekdays: "Montag - Samstag: 9:00 - 19:00",
         saturday: "Samstag: 9:00 - 18:00",
         sunday: "Sonntag: Geschlossen",
       },
@@ -200,7 +200,7 @@ const translations = {
         country: "Germany",
       },
       schedule: {
-        weekdays: "Monday - Friday: 9:00 AM - 7:00 PM",
+        weekdays: "Monday - Saturday: 9:00 AM - 7:00 PM",
         saturday: "Saturday: 9:00 AM - 6:00 PM",
         sunday: "Sunday: Closed",
       },
