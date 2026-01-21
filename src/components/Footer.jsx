@@ -45,7 +45,7 @@ export default function Footer() {
                 Telegram
               </a>
               <a
-                href="https://instagram.com/luxuryusanails"
+                href="https://www.instagram.com/luxurynails.op/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="footer-icon"

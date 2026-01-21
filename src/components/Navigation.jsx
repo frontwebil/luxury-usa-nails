@@ -46,7 +46,7 @@ export default function Navigation() {
                 <MdOutlinePhoneInTalk />
               </a>
               <a
-                href="https://instagram.com/luxuryusanails"
+                href="https://www.instagram.com/luxurynails.op/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="nav-icon"
